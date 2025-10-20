@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #333;
+    line-height: 1.6;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+/* Remove Bootstrap if not needed elsewhere */
+/* Or keep it and use our custom styles as overrides */

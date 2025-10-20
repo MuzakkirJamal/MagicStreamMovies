@@ -1,0 +1,145 @@
+.review-container {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.review-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review-title {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.review-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.movie-section {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-card-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.review-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    height: fit-content;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.review-textarea {
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 200px;
+    transition: all 0.3s ease;
+}
+
+.review-textarea:focus {
+    outline: none;
+    border-color: #0072ff;
+    box-shadow: 0 0 0 3px rgba(0, 114, 255, 0.1);
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+}
+
+.review-display {
+    color: #333;
+}
+
+.review-display h3 {
+    color: #302b63;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.review-text {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #0072ff;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 968px) {
+    .review-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .movie-card-wrapper {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .review-container {
+        padding: 20px 15px;
+    }
+    
+    .review-title {
+        font-size: 2rem;
+    }
+    
+    .review-section {
+        padding: 20px;
+    }
+}
