@@ -19,7 +19,8 @@ const Movie = ({ movie, updateMovieReview }) => {
                 <div className="movie-info">
                     <h2 className="movie-title">{movie.title}</h2>
                     <p className="movie-id">{movie.imdb_id}</p>
-                    <div className="movie-rating">
+                    
+                    {/* <div className="movie-rating">
                         <div className="rating-stars">
                             <FontAwesomeIcon icon={faStar} />
                             <FontAwesomeIcon icon={faStar} />
@@ -28,7 +29,7 @@ const Movie = ({ movie, updateMovieReview }) => {
                             <FontAwesomeIcon icon={faStar} />
                         </div>
                         <span className="rating-text">Excellent</span>
-                    </div>
+                    </div> */}
                     
                     <div className="movie-buttons">
                         <Link
