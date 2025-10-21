@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import Spinner from '../spinner/Spinner';
-import './StreamMovie-FIXED.css'; // 🔥 CHANGED TO NEW FILE
+import './StreamMovie-FIXED.css';
 
 const StreamMovie = () => {
     const [movie, setMovie] = useState(null);
@@ -52,7 +52,7 @@ const StreamMovie = () => {
         };
 
         fetchMovieDetails();
-    }, [key]);
+    }, [key, axiosPrivate]);
 
     const togglePlayback = () => {
         setIsPlaying(!isPlaying);
@@ -68,12 +68,21 @@ const StreamMovie = () => {
                 <button onClick={() => navigate(-1)} className="back-button">
                     ← Back to Movies
                 </button>
+                
                 <div className="stream-title-section">
+                    {/* MOVED RANKING BADGE HERE - No overlay issues */}
+                    {movie?.ranking?.ranking_name && (
+                        <div className={`rating-badge ${movie.ranking.ranking_name === 'MAKING HISTORY' ? 'tag-making-history' : 'tag-tax-free'}`}>
+                            {movie.ranking.ranking_name}
+                        </div>
+                    )}
+                    
                     <h1 className="stream-title">Now Streaming</h1>
                     {movie && (
                         <p className="movie-streaming-title">{movie.title}</p>
                     )}
                 </div>
+                
                 <button 
                     onClick={togglePlayback} 
                     className="playback-control"
@@ -85,7 +94,7 @@ const StreamMovie = () => {
             <div className="stream-content">
                 <div className="video-section">
                     <div className="video-player-container">
-                        {(key != null) ? (
+                        {key ? (
                             <ReactPlayer 
                                 controls={true} 
                                 playing={isPlaying}
@@ -111,17 +120,11 @@ const StreamMovie = () => {
                         )}
                     </div>
 
+                    {/* SIMPLIFIED INFO CARD - No duplicates */}
                     {movie && (
                         <div className="video-info-card">
-                            {/* Ranking first, then IMDB below it */}
-                            {movie.ranking?.ranking_name && (
-                                <div className={`movie-tag ${movie.ranking.ranking_name === 'MAKING HISTORY' ? 'tag-making-history' : 'tag-tax-free'}`}>
-                                    {movie.ranking.ranking_name}
-                                </div>
-                            )}
-                            
-                            {/* IMDB ID moved below the ranking */}
                             <p className="movie-imdb">IMDB: {movie.imdb_id}</p>
+                            {/* Additional movie info can go here if needed */}
                         </div>
                     )}
                 </div>

@@ -1,4 +1,4 @@
-/* STREAM MOVIE FIXED VERSION - CACHE BUST */
+/* STREAM MOVIE FIXED VERSION - NO OVERLAY ISSUES */
 .stream-container {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     min-height: 100vh;
@@ -17,6 +17,7 @@
     margin-right: auto;
     flex-wrap: wrap;
     gap: 15px;
+    position: relative;
 }
 
 .back-button {
@@ -61,6 +62,7 @@
     letter-spacing: -0.5px;
 }
 
+/* RANKING BADGE - MOVED TO HEADER */
 .rating-badge {
     position: absolute;
     top: 0;
@@ -142,7 +144,7 @@
     border-radius: 15px;
 }
 
-/* ✅ FINAL FIX - NO DUPLICATES */
+/* SIMPLIFIED VIDEO INFO CARD */
 .video-info-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -157,39 +159,22 @@
     font-family: 'Inter', sans-serif;
 }
 
-.movie-tag {
-    display: block;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-family: 'Inter', sans-serif;
-    order: 1;
-}
-
-.tag-making-history {
-    background: linear-gradient(45deg, #ff8a00, #e52e71);
-}
-
-.tag-tax-free {
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
-}
-
 .movie-imdb {
     color: #b8b8b8;
     font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
     display: block;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-    order: 2;
     width: 100%;
 }
 
-/* ✅ HIDE ANY POTENTIAL DUPLICATES */
-.video-info-card .movie-tag ~ .movie-tag,
-.video-info-card .movie-imdb ~ .movie-imdb {
-    display: none !important;
+/* TAGS FOR RANKING */
+.tag-making-history {
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+}
+
+.tag-tax-free {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
 }
 
 .movie-details-section {
@@ -307,58 +292,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.stream-error-container {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    font-family: 'Inter', sans-serif;
-}
-
-.error-content {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-}
-
-.error-content h2 {
-    color: #302b63;
-    margin-bottom: 20px;
-    font-family: 'Poppins', 'Inter', sans-serif;
-}
-
-.error-content p {
-    color: #666;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    font-family: 'Inter', sans-serif;
-}
-
-.back-home-btn {
-    background: linear-gradient(45deg, #0072ff, #00c6ff);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
-}
-
-.back-home-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
-}
-
+/* Responsive Design */
 @media (max-width: 1024px) {
     .stream-content {
         grid-template-columns: 1fr;
