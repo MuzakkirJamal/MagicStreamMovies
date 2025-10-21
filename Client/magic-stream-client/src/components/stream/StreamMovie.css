@@ -432,4 +432,13 @@
     .stream-title {
         font-size: 1.8rem;
     }
+    .movie-tag {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.movie-imdb {
+    display: block;
+    margin-top: 10px;
+}
 }
