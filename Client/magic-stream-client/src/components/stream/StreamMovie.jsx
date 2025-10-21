@@ -70,7 +70,7 @@ const StreamMovie = () => {
                 </button>
                 <div className="stream-title-section">
                     {/* ADDED: Rating Badge */}
-                    <div className="rating-badge">Excellent</div>
+                    {/*<div className="rating-badge">Excellent</div>*/}
                     <h1 className="stream-title">Now Streaming</h1>
                     {movie && (
                         <p className="movie-streaming-title">{movie.title}</p>
