@@ -137,7 +137,7 @@
     border-radius: 15px;
 }
 
-/* Video info card is now separate from video container */
+/* FIXED: Video info card - ensure proper stacking of elements */
 .video-info-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -145,6 +145,10 @@
     padding: 25px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 0; /* No margin since we're using gap */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    gap: 15px; /* Space between ranking and IMDB */
+    align-items: flex-start; /* Align items to the left */
 }
 
 .video-info-card h2 {
@@ -153,19 +157,15 @@
     color: white;
 }
 
-.movie-imdb {
-    color: #b8b8b8;
-    font-family: monospace;
-    margin-bottom: 15px;
-}
-
+/* FIXED: Movie tag styling - ensure it's block level */
 .movie-tag {
-    display: inline-block;
+    display: block; /* Change from inline-block to block */
     padding: 8px 20px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 1px;
+    margin-bottom: 0; /* Remove any bottom margin */
 }
 
 .tag-making-history {
@@ -174,6 +174,15 @@
 
 .tag-tax-free {
     background: linear-gradient(45deg, #00c6ff, #0072ff);
+}
+
+/* FIXED: IMDB styling - ensure it appears below ranking */
+.movie-imdb {
+    color: #b8b8b8;
+    font-family: monospace;
+    margin: 0; /* Remove bottom margin since we're using gap */
+    display: block; /* Ensure it's block level */
+    order: 2; /* Ensure it comes after ranking in flex order */
 }
 
 .movie-details-section {
