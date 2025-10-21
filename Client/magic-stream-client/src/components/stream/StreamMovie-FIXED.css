@@ -1,33 +1,4 @@
-/* 🔥 NUCLEAR FIX - FORCE STACKING */
-.video-info-card * {
-    display: block !important;
-    float: none !important;
-    clear: both !important;
-}
-
-.movie-tag {
-    display: block !important;
-    margin-bottom: 20px !important;
-    width: fit-content !important;
-}
-
-.movie-imdb {
-    display: block !important;
-    margin-top: 20px !important;
-    width: 100% !important;
-}
-
-/* Reset any inline styles that might be interfering */
-.video-info-card {
-    display: block !important;
-    all: initial;
-}
-
-.video-info-card > * {
-    all: unset;
-    display: block !important;
-    margin-bottom: 15px !important;
-}
+/* STREAM MOVIE FIXED VERSION - CACHE BUST */
 .stream-container {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     min-height: 100vh;
@@ -171,7 +142,7 @@
     border-radius: 15px;
 }
 
-/* 🔥 AGGRESSIVE FIX - This will definitely work 🔥 */
+/* ✅ FINAL FIX - NO DUPLICATES */
 .video-info-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -179,23 +150,22 @@
     padding: 25px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 0;
-    display: block !important; /* Remove flex completely */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
     font-family: 'Inter', sans-serif;
 }
 
-/* 🔥 FORCE ranking to be on its own line */
 .movie-tag {
-    display: block !important;
+    display: block;
     padding: 8px 20px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 1px;
-    margin-bottom: 15px !important; /* Force space below */
     font-family: 'Inter', sans-serif;
-    width: auto !important;
-    float: none !important;
-    clear: both !important;
+    order: 1;
 }
 
 .tag-making-history {
@@ -206,25 +176,20 @@
     background: linear-gradient(45deg, #00c6ff, #0072ff);
 }
 
-/* 🔥 FORCE IMDB to be on new line below ranking */
 .movie-imdb {
     color: #b8b8b8;
     font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
-    display: block !important;
+    display: block;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-    margin-top: 15px !important; /* Force space above */
-    width: 100% !important;
-    float: none !important;
-    clear: both !important; /* This ensures it starts on a new line */
-    order: unset !important; /* Remove any flex order */
+    order: 2;
+    width: 100%;
 }
 
-/* 🔥 NUCLEAR OPTION - If above doesn't work, use this */
-.video-info-card::after {
-    content: "";
-    display: table;
-    clear: both;
+/* ✅ HIDE ANY POTENTIAL DUPLICATES */
+.video-info-card .movie-tag ~ .movie-tag,
+.video-info-card .movie-imdb ~ .movie-imdb {
+    display: none !important;
 }
 
 .movie-details-section {

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import Spinner from '../spinner/Spinner';
-import './StreamMovie.css';
+import './StreamMovie-FIXED.css'; // 🔥 CHANGED TO NEW FILE
 
 const StreamMovie = () => {
     const [movie, setMovie] = useState(null);
@@ -126,27 +126,6 @@ const StreamMovie = () => {
                     )}
                 </div>
                 
-{movie && (
-    <div className="video-info-card">
-        {movie.ranking?.ranking_name && (
-            <div 
-                className={`movie-tag ${movie.ranking.ranking_name === 'MAKING HISTORY' ? 'tag-making-history' : 'tag-tax-free'}`}
-                style={{ display: 'block', marginBottom: '15px' }}
-            >
-                {movie.ranking.ranking_name}
-            </div>
-        )}
-        
-        <p 
-            className="movie-imdb" 
-            style={{ display: 'block', marginTop: '15px' }}
-        >
-            IMDB: {movie.imdb_id}
-        </p>
-    </div>
-)}
-
-
                 {movie && (
                     <div className="movie-details-section">
                         <div className="details-card">
