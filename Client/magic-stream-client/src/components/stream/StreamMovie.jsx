@@ -69,8 +69,6 @@ const StreamMovie = () => {
                     ← Back to Movies
                 </button>
                 <div className="stream-title-section">
-                    {/* ADDED: Rating Badge */}
-                    {/*<div className="rating-badge">Excellent</div>*/}
                     <h1 className="stream-title">Now Streaming</h1>
                     {movie && (
                         <p className="movie-streaming-title">{movie.title}</p>
@@ -115,14 +113,15 @@ const StreamMovie = () => {
 
                     {movie && (
                         <div className="video-info-card">
-                            {/* REMOVED: Duplicate title <h2>{movie.title}</h2> */}
-                            <p className="movie-imdb">IMDB: {movie.imdb_id}</p>
-                            
+                            {/* Ranking first, then IMDB below it */}
                             {movie.ranking?.ranking_name && (
                                 <div className={`movie-tag ${movie.ranking.ranking_name === 'MAKING HISTORY' ? 'tag-making-history' : 'tag-tax-free'}`}>
                                     {movie.ranking.ranking_name}
                                 </div>
                             )}
+                            
+                            {/* IMDB ID moved below the ranking */}
+                            <p className="movie-imdb">IMDB: {movie.imdb_id}</p>
                         </div>
                     )}
                 </div>
