@@ -1,34 +1,3 @@
-/* 🔥 NUCLEAR FIX - FORCE STACKING */
-.video-info-card * {
-    display: block !important;
-    float: none !important;
-    clear: both !important;
-}
-
-.movie-tag {
-    display: block !important;
-    margin-bottom: 20px !important;
-    width: fit-content !important;
-}
-
-.movie-imdb {
-    display: block !important;
-    margin-top: 20px !important;
-    width: 100% !important;
-}
-
-/* Reset any inline styles that might be interfering */
-.video-info-card {
-    display: block !important;
-    all: initial;
-}
-
-.video-info-card > * {
-    all: unset;
-    display: block !important;
-    margin-bottom: 15px !important;
-}
-
 .stream-container {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     min-height: 100vh;
@@ -172,6 +141,7 @@
     border-radius: 15px;
 }
 
+/* 🔥 CLEAN FIX - This will work without duplicates */
 .video-info-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -179,16 +149,23 @@
     padding: 25px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
     font-family: 'Inter', sans-serif;
 }
 
 .movie-tag {
+    display: block;
     padding: 8px 20px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 1px;
+    margin-bottom: 0;
     font-family: 'Inter', sans-serif;
+    order: 1;
 }
 
 .tag-making-history {
@@ -202,9 +179,18 @@
 .movie-imdb {
     color: #b8b8b8;
     font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+    display: block;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-    font-family: 'Inter', sans-serif;
+    margin: 0;
+    order: 2;
+    width: 100%;
+}
+
+/* 🔥 HIDE DUPLICATES - This removes any duplicate elements */
+.video-info-card .movie-tag:not(:first-of-type),
+.video-info-card .movie-imdb:not(:first-of-type) {
+    display: none !important;
 }
 
 .movie-details-section {
