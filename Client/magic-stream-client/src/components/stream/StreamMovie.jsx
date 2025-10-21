@@ -126,6 +126,27 @@ const StreamMovie = () => {
                     )}
                 </div>
                 
+{movie && (
+    <div className="video-info-card">
+        {movie.ranking?.ranking_name && (
+            <div 
+                className={`movie-tag ${movie.ranking.ranking_name === 'MAKING HISTORY' ? 'tag-making-history' : 'tag-tax-free'}`}
+                style={{ display: 'block', marginBottom: '15px' }}
+            >
+                {movie.ranking.ranking_name}
+            </div>
+        )}
+        
+        <p 
+            className="movie-imdb" 
+            style={{ display: 'block', marginTop: '15px' }}
+        >
+            IMDB: {movie.imdb_id}
+        </p>
+    </div>
+)}
+
+
                 {movie && (
                     <div className="movie-details-section">
                         <div className="details-card">
